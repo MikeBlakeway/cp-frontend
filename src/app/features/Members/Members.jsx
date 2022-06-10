@@ -1,9 +1,7 @@
 import React from 'react'
-import constants from '../../constants'
 import {useFetch} from '../../services'
 
-import {MembersHeaders} from './components/MembersHeaders'
-import {MembersBody} from './components/MembersBody'
+import {Headers, Body} from './tables'
 
 export const Members = () => {
 	// fetch data
@@ -12,13 +10,14 @@ export const Members = () => {
 		{}
 	)
 	// constants
-	const {parties} = constants
-	const headers = ['Name', 'Constituency', 'Member Since', 'Majority']
+	const headers = ['Name', 'Electorate', 'Constituency', 'Member Since']
 
 	return (
-		<table className='table-fixed min-w-full divide-y divide-gray-200'>
-			<MembersHeaders headers={headers} />
-			<MembersBody members={members} parties={parties} />
+		<table className='min-w-full divide-y divide-gray-200 table-fixed'>
+			<Headers headers={headers} />
+			<Body members={members} />
 		</table>
 	)
 }
+
+export default Members

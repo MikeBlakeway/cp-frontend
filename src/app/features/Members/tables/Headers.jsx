@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const MembersHeaders = ({headers}) => {
+export const Headers = ({headers}) => {
 	return (
 		<thead className='bg-gray-100'>
 			<tr>

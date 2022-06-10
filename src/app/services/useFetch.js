@@ -18,6 +18,7 @@ export const useFetch = (url, options) => {
 			}
 		}
 		fetchData()
-	}, [url])
+		// eslint-disable-next-line
+	}, [])
 	return {data, error, loading}
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Tables from '../../Tables'
+import Members from '../../../features/Members/Members'
 import {ContentPagination} from '.'
 
 export const ContentContainer = () => {
@@ -7,10 +7,10 @@ export const ContentContainer = () => {
 		<>
 			<div className='flex flex-col'>
 				<div className='overflow-x-auto'>
-					<div className='align-middle inline-block min-w-full'>
-						<div className='shadow overflow-hidden'>
+					<div className='inline-block min-w-full align-middle'>
+						<div className='overflow-hidden shadow'>
 							{/* use routing to render component */}
-							<Tables.Members />
+							<Members />
 						</div>
 					</div>
 				</div>
