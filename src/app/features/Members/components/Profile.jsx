@@ -1,14 +1,28 @@
 import React from 'react'
 
-export const Profile = ({name, partyColour, partyName, image}) => {
+export const Profile = ({name, partyName, partyLogo, image, since}) => {
 	return (
-		<td className='flex items-center p-4 mr-12 space-x-6 whitespace-nowrap lg:mr-0'>
-			<img className='w-10 h-10 rounded-full' src={image} alt={`${name} avatar`} />
-			<div className='text-sm font-normal text-gray-500'>
-				<div className='text-base font-semibold text-gray-900'>{name}</div>
-				<div className='flex items-center'>
-					<div className={`h-2.5 w-2.5 rounded-full ${partyColour} mr-2`}></div>
-					<div className='text-sm font-normal text-gray-500'>{partyName}</div>
+		<td className='p-4 text-lg font-medium text-gray-900 whitespace-nowrap'>
+			<div className='flex items-center space-x-4'>
+				<div className='relative'>
+					<img
+						className='w-10 h-10 rounded-full'
+						src={image}
+						alt={`${name} avatar`}
+					/>
+				</div>
+
+				<div className='space-y-1 font-medium'>
+					<div>{name}</div>
+					<div className='flex items-center'>
+						<img
+							className='w-4 h-4 rounded-full'
+							src={partyLogo}
+							alt={`${partyName}`}
+						/>
+						<div className='text-sm ml-1 font-normal text-gray-500'>{partyName}</div>
+					</div>
+					<div className='text-sm ml-1 font-normal text-gray-400'>Since {since}</div>
 				</div>
 			</div>
 		</td>

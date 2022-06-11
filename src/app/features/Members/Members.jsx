@@ -10,7 +10,7 @@ export const Members = () => {
 		{}
 	)
 	// constants
-	const headers = ['Name', 'Electorate', 'Constituency', 'Member Since']
+	const headers = ['Member', 'Electorate', '', '']
 
 	return (
 		<table className='min-w-full divide-y divide-gray-200 table-fixed'>

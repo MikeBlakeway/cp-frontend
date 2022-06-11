@@ -4,8 +4,8 @@ import {Row} from './Row'
 export const Body = ({members}) => {
 	return (
 		<tbody className='bg-white divide-y divide-gray-200'>
-			{members?.items.map(member => (
-				<Row member={member} />
+			{members?.items.map((member, i) => (
+				<Row key={i} member={member} />
 			))}
 		</tbody>
 	)

@@ -26,15 +26,13 @@ export const Row = ({member}) => {
 		<tr key={id} className='hover:bg-gray-100'>
 			<Profile
 				name={nameDisplayAs}
-				partyColour={parties[latestParty.name].colour}
+				partyLogo={parties[latestParty.name].logo}
 				partyName={latestParty.name}
 				image={thumbnailUrl}
+				since={startDate}
 			/>
-			<Electorate mp={id} constituency={membershipFrom} />
+			<Electorate mp={id} constituency={membershipFrom} name={nameDisplayAs} />
 
-			<td className='p-4 text-base font-medium text-gray-900 whitespace-nowrap'>
-				{membershipFrom}
-			</td>
 			<td className='p-4 text-base font-medium text-gray-900 whitespace-nowrap'>
 				{startDate}
 			</td>
