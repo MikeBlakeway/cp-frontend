@@ -1,5 +1,5 @@
 import React from 'react'
-import {MobileSearch} from './'
+import {MobileSearch} from '.'
 
 export const NavList = () => {
 	return (

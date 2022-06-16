@@ -1,6 +1,7 @@
 import React from 'react'
 
 export const Profile = ({name, partyName, partyLogo, image, since}) => {
+
 	return (
 		<td className='p-4 text-lg font-medium text-gray-900 whitespace-nowrap'>
 			<div className='flex items-center space-x-4'>

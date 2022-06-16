@@ -2,21 +2,25 @@ import React from 'react'
 import {useFetch} from '../../services'
 
 import {Headers, Body} from './tables'
+import Placeholders from '../shared/Placeholders'
 
 export const Members = () => {
-	// fetch data
-	const {data: members} = useFetch(
-		'https://members-api.parliament.uk/api/Members/Search?PartyId=4&House=1&IsCurrentMember=true',
-		{}
-	)
+	// fetch data on render
+	const {data: members} = useFetch('/v1/members', {})
 	// constants
-	const headers = ['Member', 'Electorate', '', '']
+	const headers = ['Member', 'Electorate', '']
 
 	return (
-		<table className='min-w-full divide-y divide-gray-200 table-fixed'>
-			<Headers headers={headers} />
-			<Body members={members} />
-		</table>
+		<>
+			{members ? (
+				<table className='min-w-full divide-y divide-gray-200 table-fixed'>
+					<Headers headers={headers} />
+					<Body members={members} />
+				</table>
+			) : (
+				<Placeholders.Row />
+			)}
+		</>
 	)
 }
 

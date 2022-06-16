@@ -1,14 +1,14 @@
 import Conservative from '../../assets/images/conservatives_logo.jpeg'
-import Labour from '../../assets/images/labour.png'
+import Labour from '../../assets/images/labour.jpeg'
 
 export const constants = {}
 
 constants.parties = {
-	Conservative: {
+	"Con": {
 		logo: Conservative,
 	},
-	Labour: {
-		image: Labour,
+	"Lab": {
+		logo: Labour,
 	},
 }
 
