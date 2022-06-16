@@ -4,11 +4,13 @@ import Labour from '../../assets/images/labour.jpeg'
 export const constants = {}
 
 constants.parties = {
-	"Con": {
+	Con: {
 		logo: Conservative,
+		colour: 'blue',
 	},
-	"Lab": {
+	Lab: {
 		logo: Labour,
+		colour: 'red',
 	},
 }
 

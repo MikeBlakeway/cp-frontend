@@ -6,10 +6,11 @@ export const Row = ({member}) => {
 	// destructuring values from member object
 	const {
 		id,
-		latestHouseMembership: {membershipStartDate, membershipFrom},
+		latestHouseMembership: {membershipStartDate},
 		latestParty,
 		nameDisplayAs,
 		thumbnailUrl,
+		election,
 	} = member
 
 	const {parties} = constants
@@ -29,7 +30,7 @@ export const Row = ({member}) => {
 				image={thumbnailUrl}
 				since={startDate}
 			/>
-			<Electorate mp={id} constituency={membershipFrom} name={nameDisplayAs} />
+			<Electorate election={election} parties={parties} />
 
 			<td className='p-4 text-base font-medium text-gray-900 whitespace-nowrap'>
 				{startDate}
