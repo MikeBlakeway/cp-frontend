@@ -3,10 +3,10 @@ import React from 'react'
 export const Profile = ({name, partyName, partyLogo, image, since}) => {
 	return (
 		<td className='p-4 text-lg font-medium text-gray-600 whitespace-nowrap'>
-			<div class='flex items-center font-sans'>
-				<img class='h-20 w-20 rounded-full' src={image} alt={name} />
+			<div className='flex items-center font-sans'>
+				<img className='h-20 w-20 rounded-full' src={image} alt={name} />
 
-				<div class='ml-5'>
+				<div className='ml-5'>
 					<div className='text-xl font-medium text-gray-600'>{name}</div>
 					<div className='flex items-center my-1'>
 						<img
@@ -17,7 +17,7 @@ export const Profile = ({name, partyName, partyLogo, image, since}) => {
 						<div className='text-sm ml-1 font-normal text-gray-500'>{partyName}</div>
 					</div>
 
-					<div class='flex text-sm font-light text-gray-500'>
+					<div className='flex text-sm font-light text-gray-500'>
 						Joined:
 						<span className='bg-blue-100 ml-1 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded'>
 							{since}

@@ -5,10 +5,9 @@ import {Headers, Body} from './tables'
 import Placeholders from '../shared/Placeholders'
 
 export const Members = () => {
-	// fetch data on render
 	const {data: members} = useFetch('/v1/members', {})
-	// constants
-	const headers = ['Member', 'Electorate', 'Contact']
+
+	const headers = ['Member', 'Contact', 'Electorate']
 
 	return (
 		<div className='relative overflow-x-auto shadow-md'>

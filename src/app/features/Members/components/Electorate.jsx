@@ -19,9 +19,9 @@ export const Electorate = ({election, parties}) => {
 	const voteSharePercent = parseFloat(voteShare).toFixed(0)
 
 	return (
-		<td className='p-4 text-lg font-medium text-gray-600 whitespace-nowrap'>
+		<td className='p-4 text-lg font-medium text-gray-600 whitespace-nowrap pr-10'>
 			<div className=''>{constituencyName}</div>
-			<div className='flex mt-2 ml-3 justify-between mb-1'>
+			<div className='flex mt-2 justify-between mb-1'>
 				<span className='text-sm font-medium text-gray-600'>Vote Share</span>
 				<span
 					className={
@@ -33,7 +33,7 @@ export const Electorate = ({election, parties}) => {
 					}
 				>{`${voteSharePercent}%`}</span>
 			</div>
-			<div className='w-100 ml-3 bg-gray-100 mb-3 rounded-full h-2'>
+			<div className='w-100 bg-gray-100 mb-3 rounded-full h-2'>
 				<div
 					className={
 						voteSharePercent > 50
@@ -45,7 +45,7 @@ export const Electorate = ({election, parties}) => {
 					style={{width: `${voteSharePercent}%`}}
 				></div>
 			</div>
-			<div className='flex ml-3 justify-between mb-1'>
+			<div className='flex justify-between mb-1'>
 				<span className='text-sm mr-1 font-medium text-gray-600'>Result</span>
 				<div className='flex items-center'>
 					<img
@@ -56,7 +56,7 @@ export const Electorate = ({election, parties}) => {
 					<span
 						className={`bg-${badgeColour[outcome[1]]}-100 ml-1 text-${
 							badgeColour[outcome[1]]
-						}-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded`}
+						}-800 text-xs font-semibold px-2.5 py-0.5 rounded`}
 					>
 						{result}
 					</span>

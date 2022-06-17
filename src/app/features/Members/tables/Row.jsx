@@ -4,7 +4,6 @@ import {Electorate, Profile} from '../components'
 import {Contact} from '../components/Contact'
 
 export const Row = ({member}) => {
-	// destructuring values from member object
 	const {
 		id,
 		latestHouseMembership: {membershipStartDate},
@@ -36,8 +35,8 @@ export const Row = ({member}) => {
 				image={thumbnailUrl}
 				since={startDate}
 			/>
-			<Electorate election={election} parties={parties} />
 			<Contact contact={contactDetails} />
+			<Electorate election={election} parties={parties} />
 		</tr>
 	)
 }
