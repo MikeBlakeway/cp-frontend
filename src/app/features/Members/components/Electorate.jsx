@@ -33,7 +33,7 @@ export const Electorate = ({election, parties}) => {
 					}
 				>{`${voteSharePercent}%`}</span>
 			</div>
-			<div className='w-full ml-3 bg-gray-100 mb-3 rounded-full h-2'>
+			<div className='w-100 ml-3 bg-gray-100 mb-3 rounded-full h-2'>
 				<div
 					className={
 						voteSharePercent > 50
@@ -54,7 +54,7 @@ export const Electorate = ({election, parties}) => {
 						alt={`${winningParty.name}`}
 					/>
 					<span
-						class={`bg-${badgeColour[outcome[1]]}-100 ml-1 text-${
+						className={`bg-${badgeColour[outcome[1]]}-100 ml-1 text-${
 							badgeColour[outcome[1]]
 						}-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded`}
 					>

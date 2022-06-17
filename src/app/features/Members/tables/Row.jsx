@@ -1,6 +1,7 @@
 import React from 'react'
 import constants from '../../../constants'
 import {Electorate, Profile} from '../components'
+import {Contact} from '../components/Contact'
 
 export const Row = ({member}) => {
 	// destructuring values from member object
@@ -11,10 +12,15 @@ export const Row = ({member}) => {
 		nameDisplayAs,
 		thumbnailUrl,
 		election,
+		contact,
 	} = member
 
 	const {parties} = constants
 	const partyLogo = parties[latestParty.abbreviation].logo
+	const contactDetails = Object.assign(
+		{},
+		...contact.value.map(object => ({[object.type]: {...object}}))
+	)
 	const startDate = new Date(membershipStartDate).toLocaleDateString('en-gb', {
 		day: 'numeric',
 		year: 'numeric',
@@ -31,10 +37,7 @@ export const Row = ({member}) => {
 				since={startDate}
 			/>
 			<Electorate election={election} parties={parties} />
-
-			<td className='p-4 text-base font-medium text-gray-900 whitespace-nowrap'>
-				{startDate}
-			</td>
+			<Contact contact={contactDetails} />
 		</tr>
 	)
 }
