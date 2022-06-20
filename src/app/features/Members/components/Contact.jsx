@@ -23,10 +23,10 @@ export const Contact = ({contact}) => {
 	}
 
 	return (
-		<td class='p-4 text-gray-600 whitespace-nowrap rounded-lg'>
-			<div class='flex flex-col'>
-				<div class='mt-2'>
-					<div class='flex flex-col items-start justify-center rounded-md transition-colors duration-100 ease-in-out'>
+		<td className='p-4 text-gray-600 whitespace-nowrap rounded-lg'>
+			<div className='flex flex-col'>
+				<div className='mt-2'>
+					<div className='flex flex-col items-start justify-center rounded-md transition-colors duration-100 ease-in-out'>
 						<a
 							href={`mailto:${Parliamentary.email}`}
 							className='flex flex-row items-center justify-center'
@@ -34,11 +34,11 @@ export const Contact = ({contact}) => {
 							<Icons.Email />
 							<span>{Parliamentary.email}</span>
 						</a>
-						<div class='mt-2 flex flex-row items-center justify-center'>
+						<div className='mt-2 flex flex-row items-center justify-center'>
 							<Icons.Address />
 							<span>{address}</span>
 						</div>
-						<div class='mt-2 w-full flex flex-row items-center justify-between'>
+						<div className='mt-2 w-full flex flex-row items-center justify-between'>
 							{phone[0] !== 'f' ? (
 								<div className='flex'>
 									<Icons.Phone />

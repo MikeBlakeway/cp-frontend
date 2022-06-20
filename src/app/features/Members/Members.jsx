@@ -5,8 +5,9 @@ import {Headers, Body} from './tables'
 import Placeholders from '../shared/Placeholders'
 
 export const Members = () => {
-	const {data: members} = useFetch('/v1/members', {})
+	const {data: members} = useFetch('/api/v1/active-members', {})
 
+	members && console.log(members)
 	const headers = ['Member', 'Contact', 'Electorate']
 
 	return (
