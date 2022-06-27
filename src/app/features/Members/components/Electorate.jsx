@@ -1,9 +1,8 @@
 import React from 'react'
 
-export const Electorate = ({election, parties}) => {
-	const {candidates, constituencyName, result, winningParty} = election
+export const Electorate = ({election, partyLogo, partyName}) => {
+	const {candidates, constituencyName, result} = election
 
-	const partyLogo = parties[winningParty.abbreviation].logo
 	const outcome = result.split(' ')
 	const badgeColour = {
 		Hold: 'indigo',
@@ -49,7 +48,7 @@ export const Electorate = ({election, parties}) => {
 					<img
 						className='w-5 h-5 rounded-full'
 						src={partyLogo}
-						alt={`${winningParty.name}`}
+						alt={`${partyName}`}
 					/>
 					<span
 						className={`bg-${badgeColour[outcome[1]]}-100 ml-1 text-${

@@ -5,17 +5,21 @@ export const Contact = ({contact}) => {
 	const {Constituency, Facebook, Parliamentary, Twitter, Website} = contact
 
 	const address =
-		contact.hasOwnProperty('Constituency') &&
-		Constituency.postcode !== '' &&
-		Constituency.postcode !== null
-			? `${Constituency.line1}, ${Constituency.postcode}`
-			: `${Parliamentary.line1}, ${Parliamentary.postcode}`
+		contact !== ''
+			? contact.hasOwnProperty('Constituency') &&
+			  Constituency.postcode !== '' &&
+			  Constituency.postcode !== null
+				? `${Constituency.line1}, ${Constituency.postcode}`
+				: `${Parliamentary.line1}, ${Parliamentary.postcode}`
+			: ''
 	const phone =
-		contact.hasOwnProperty('Constituency') &&
-		Constituency.phone !== '' &&
-		Constituency.phone !== null
-			? `${Constituency.phone}`
-			: `${Parliamentary.phone !== null && Parliamentary.phone} `
+		contact !== ''
+			? contact.hasOwnProperty('Constituency') &&
+			  Constituency.phone !== '' &&
+			  Constituency.phone !== null
+				? `${Constituency.phone}`
+				: `${Parliamentary.phone !== null && Parliamentary.phone} `
+			: ''
 	const social = {
 		hasTwitter: contact.hasOwnProperty('Twitter'),
 		hasFacebook: contact.hasOwnProperty('Facebook'),
@@ -28,18 +32,20 @@ export const Contact = ({contact}) => {
 				<div className='mt-2'>
 					<div className='flex flex-col items-start justify-center rounded-md transition-colors duration-100 ease-in-out'>
 						<a
-							href={`mailto:${Parliamentary.email}`}
+							href={`mailto: ${contact !== '' ? Parliamentary.email : ''}`}
 							className='flex flex-row items-center justify-center'
 						>
 							<Icons.Email />
-							<span>{Parliamentary.email}</span>
+							<span>{contact !== '' ? Parliamentary.email : ''}</span>
 						</a>
 						<div className='mt-2 flex flex-row items-center justify-center'>
 							<Icons.Address />
-							<span>{address}</span>
+							<span>{contact !== '' ? address : ''}</span>
 						</div>
 						<div className='mt-2 w-full flex flex-row items-center justify-between'>
-							{phone[0] !== 'f' ? (
+							{contact === [] ? (
+								''
+							) : phone[0] !== 'f' ? (
 								<div className='flex'>
 									<Icons.Phone />
 									<span>{phone}</span>

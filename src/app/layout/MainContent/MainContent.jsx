@@ -1,12 +1,7 @@
 import React from 'react'
 import {Outlet, useLocation} from 'react-router-dom'
 import {getTitles} from '../../constants/routes'
-import {
-	BreadCrumbs,
-	PageTitle,
-	ContentPagination,
-	ContentSearch,
-} from './components'
+import {BreadCrumbs, PageTitle, ContentSearch} from './components'
 
 const MainContent = () => {
 	let {pathname} = useLocation()
@@ -29,7 +24,6 @@ const MainContent = () => {
 				</div>
 			</div>
 			<Outlet />
-			<ContentPagination />
 		</main>
 	)
 }

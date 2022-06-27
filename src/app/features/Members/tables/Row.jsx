@@ -16,10 +16,10 @@ export const Row = ({member}) => {
 
 	const {parties} = constants
 	const partyLogo = parties[latestParty.abbreviation].logo
-	const contactDetails = Object.assign(
-		{},
-		...contact.map(object => ({[object.type]: {...object}}))
-	)
+	const contactDetails =
+		contact.length > 0
+			? Object.assign({}, ...contact.map(object => ({[object.type]: {...object}})))
+			: ''
 	const startDate = new Date(membershipStartDate).toLocaleDateString('en-gb', {
 		day: 'numeric',
 		year: 'numeric',
@@ -36,7 +36,11 @@ export const Row = ({member}) => {
 				since={startDate}
 			/>
 			<Contact contact={contactDetails} />
-			<Electorate election={latestElectionResults} parties={parties} />
+			<Electorate
+				election={latestElectionResults}
+				partyLogo={partyLogo}
+				partyName={latestParty.name}
+			/>
 		</tr>
 	)
 }
