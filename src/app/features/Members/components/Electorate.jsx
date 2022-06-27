@@ -1,9 +1,7 @@
 import React from 'react'
 
 export const Electorate = ({election, parties}) => {
-	const {
-		value: {candidates, constituencyName, result, winningParty},
-	} = election
+	const {candidates, constituencyName, result, winningParty} = election
 
 	const partyLogo = parties[winningParty.abbreviation].logo
 	const outcome = result.split(' ')

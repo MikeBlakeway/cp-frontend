@@ -10,7 +10,7 @@ export const Row = ({member}) => {
 		latestParty,
 		nameDisplayAs,
 		thumbnailUrl,
-		election,
+		latestElectionResults,
 		contact,
 	} = member
 
@@ -18,7 +18,7 @@ export const Row = ({member}) => {
 	const partyLogo = parties[latestParty.abbreviation].logo
 	const contactDetails = Object.assign(
 		{},
-		...contact.value.map(object => ({[object.type]: {...object}}))
+		...contact.map(object => ({[object.type]: {...object}}))
 	)
 	const startDate = new Date(membershipStartDate).toLocaleDateString('en-gb', {
 		day: 'numeric',
@@ -36,7 +36,7 @@ export const Row = ({member}) => {
 				since={startDate}
 			/>
 			<Contact contact={contactDetails} />
-			<Electorate election={election} parties={parties} />
+			<Electorate election={latestElectionResults} parties={parties} />
 		</tr>
 	)
 }
