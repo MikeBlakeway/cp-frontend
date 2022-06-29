@@ -1,5 +1,5 @@
 import React from 'react'
-import Chevron from '../../../assets/svg/Chevron'
+import Chevron from '../assets/svg/Chevron'
 
 export const ContentPagination = ({count, skip, setSkip}) => {
 	const end = skip + 50

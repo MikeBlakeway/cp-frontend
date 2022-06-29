@@ -1,5 +1,5 @@
 import React from 'react'
-import {Icons} from '../../shared'
+import {Icons} from '../../../shared'
 
 export const Contact = ({contact}) => {
 	const {Constituency, Facebook, Parliamentary, Twitter, Website} = contact

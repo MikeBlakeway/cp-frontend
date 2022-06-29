@@ -1,30 +1,34 @@
 import React from 'react'
-import {Outlet, useLocation} from 'react-router-dom'
-import {getTitles} from '../../constants/routes'
+import {Outlet} from 'react-router-dom'
 import {BreadCrumbs, PageTitle, ContentSearch} from './components'
+import Navbar from '../Navbar/Navbar'
+import SideBar from '../SideBar/SideBar'
 
 const MainContent = () => {
-	let {pathname} = useLocation()
-	const titles = getTitles()
-
 	return (
-		<main
-			id='main-content'
-			className='h-full w-full bg-gray-50 relative overflow-y-auto ml-52'
-		>
-			<div className='p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5'>
-				<div className='mb-1 w-full'>
-					<div className='mb-4'>
-						<BreadCrumbs />
-						<PageTitle pageTitle={titles[pathname]} />
+		<>
+			<Navbar />
+			<div className='flex overflow-hidden bg-white pt-16'>
+				<SideBar />
+				<main
+					id='main-content'
+					className='h-full w-full bg-gray-50 relative overflow-y-auto ml-52'
+				>
+					<div className='p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5'>
+						<div className='mb-1 w-full'>
+							<div className='mb-4'>
+								<BreadCrumbs />
+								<PageTitle pageTitle='All Current Members' />
+							</div>
+							<div className='sm:flex'>
+								<ContentSearch />
+							</div>
+						</div>
 					</div>
-					<div className='sm:flex'>
-						<ContentSearch />
-					</div>
-				</div>
+					<Outlet />
+				</main>
 			</div>
-			<Outlet />
-		</main>
+		</>
 	)
 }
 

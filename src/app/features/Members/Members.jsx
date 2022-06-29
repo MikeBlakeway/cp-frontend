@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react'
 import {useFetch} from '../../services'
 
 import {Headers, Body} from './tables'
-import {ContentPagination} from '../shared/ContentPagination'
-import Placeholders from '../shared/Placeholders'
+import {ContentPagination} from '../../shared/ContentPagination'
+import Placeholders from '../../shared/Placeholders'
 
 export const Members = () => {
 	const [skip, setSkip] = useState(200)
