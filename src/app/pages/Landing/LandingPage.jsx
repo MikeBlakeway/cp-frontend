@@ -2,7 +2,7 @@ import React from 'react'
 
 import InitialSearchTool from '../../features/InitialSearchTool'
 import {Hero, Header, Footer} from '../../layout'
-import Section from '../../layout/Section'
+import Section from '../../layout/Sections'
 import Voting from '../../assets/images/vector/voting.jpg'
 
 export const LandingPage = () => {

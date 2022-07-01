@@ -27,11 +27,11 @@ export const Row = ({member}) => {
 	})
 
 	return (
-		<tr key={id} className='hover:bg-gray-100'>
+		<tr key={id} className='hover:bg-slate-50'>
 			<Profile
 				name={nameDisplayAs}
 				partyLogo={partyLogo}
-				partyName={latestParty.name}
+				party={latestParty}
 				image={thumbnailUrl}
 				since={startDate}
 			/>

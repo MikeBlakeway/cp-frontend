@@ -2,16 +2,16 @@ import React from 'react'
 import Chevron from '../assets/svg/Chevron'
 
 export const ContentPagination = ({count, skip, setSkip}) => {
-	const end = skip + 50
+	const end = skip + 20
 	const start = skip + 1
 
 	const handleForward = () => {
-		end !== count && setSkip(skip + 50)
+		end !== count && setSkip(skip + 20)
 		return
 	}
 
 	const handleBack = () => {
-		skip !== 0 && setSkip(skip - 50)
+		skip !== 0 && setSkip(skip - 20)
 		return
 	}
 

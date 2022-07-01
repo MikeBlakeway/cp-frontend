@@ -3,7 +3,7 @@ import {Row} from './Row'
 
 export const Body = ({members}) => {
 	return (
-		<tbody className='bg-white divide-y divide-gray-200'>
+		<tbody className='bg-white divide-y divide-slate-200'>
 			{members?.map((member, i) => {
 				return <Row key={i} member={member} />
 			})}

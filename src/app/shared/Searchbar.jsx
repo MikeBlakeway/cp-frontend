@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const Searchbar = () => {
+const Searchbar = () => {
 	return (
-		<form action='#' method='GET' className='hidden lg:block lg:pl-32'>
+		<form action='#' method='GET'>
 			<label htmlFor='topbar-search' className='sr-only'>
 				Search
 			</label>
@@ -32,3 +32,5 @@ export const Searchbar = () => {
 		</form>
 	)
 }
+
+export default Searchbar
