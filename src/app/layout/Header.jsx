@@ -11,10 +11,10 @@ function Header() {
 					<a href='/' className='mr-5 hover:text-cyan-600'>
 						Home
 					</a>
-					<a href='/' className='mr-5 hover:text-cyan-600'>
+					<a href='/commons' className='mr-5 hover:text-cyan-600'>
 						Commons
 					</a>
-					<a href='/' className='mr-5 hover:text-cyan-600'>
+					<a href='/lords' className='mr-5 hover:text-cyan-600'>
 						Lords
 					</a>
 				</nav>

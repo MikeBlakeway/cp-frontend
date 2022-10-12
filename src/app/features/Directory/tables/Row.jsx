@@ -1,7 +1,7 @@
 import React from 'react'
 import constants from '../../../constants'
-import {Electorate, Profile} from '../components'
-import {Contact} from '../components/Contact'
+import {Profile} from '../components'
+// import {Contact} from '../components/Contact'
 
 export const Row = ({member}) => {
 	const {
@@ -10,16 +10,14 @@ export const Row = ({member}) => {
 		latestParty,
 		nameDisplayAs,
 		thumbnailUrl,
-		latestElectionResults,
-		contact,
 	} = member
 
 	const {parties} = constants
 	const partyLogo = parties[latestParty.abbreviation].logo
-	const contactDetails =
-		contact.length > 0
-			? Object.assign({}, ...contact.map(object => ({[object.type]: {...object}})))
-			: ''
+	// const contactDetails =
+	// 	contact.length > 0
+	// 		? Object.assign({}, ...contact.map(object => ({[object.type]: {...object}})))
+	// 		: ''
 	const startDate = new Date(membershipStartDate).toLocaleDateString('en-gb', {
 		day: 'numeric',
 		year: 'numeric',
@@ -35,12 +33,7 @@ export const Row = ({member}) => {
 				image={thumbnailUrl}
 				since={startDate}
 			/>
-			<Contact contact={contactDetails} />
-			<Electorate
-				election={latestElectionResults}
-				partyLogo={partyLogo}
-				partyName={latestParty.name}
-			/>
+			{/* <Contact contact={contactDetails} /> */}
 		</tr>
 	)
 }

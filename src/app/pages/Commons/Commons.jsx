@@ -3,6 +3,7 @@ import React from 'react'
 import Wrapper from '../../layout/Wrapper'
 import {Tabs, Searchbar} from '../../shared'
 import Directory from '../../features/Directory/Directory'
+import Profile from '../../features/Profile/Profile'
 
 import Logo from '../../assets/images/commons.png'
 import PartyTags from '../../features/Directory/components/PartyTags'
@@ -31,7 +32,14 @@ export const Commons = () => {
 					<PartyTags house='1' />
 				</div>
 			</Tabs>
-			<Directory />
+			<div className='flex flex-row justify-between w-full'>
+				<div className='w-1/3 mr-4'>
+					<Directory />
+				</div>
+				<div className='w-2/3 ml-4'>
+					<Profile />
+				</div>
+			</div>
 		</Wrapper>
 	)
 }

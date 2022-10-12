@@ -4,7 +4,6 @@ import {useFetch} from '../../services'
 import {Headers, Body} from './tables'
 import {ContentPagination} from '../../shared/ContentPagination'
 import Placeholders from '../../shared/Placeholders'
-import Cards from '../../shared/Cards'
 
 export const Directory = () => {
 	const [skip, setSkip] = useState(0)
@@ -17,11 +16,11 @@ export const Directory = () => {
 		// eslint-disable-next-line
 	}, [skip])
 
-	const headers = ['Member', 'Contact', 'Electorate']
+	const headers = ['Member']
 
 	return (
 		<>
-			<div className='p-4 bg-white border border-slate-200 shadow'>
+			<div className='w-full p-4 bg-white border border-slate-200 shadow'>
 				<div className='flex flex-col border border-slate-200 overflow-x-hidden rounded max-h-[38rem]'>
 					{data ? (
 						<table>
